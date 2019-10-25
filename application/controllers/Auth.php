@@ -24,7 +24,7 @@ class Auth extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('login_model');
+        $this->load->model('admin/login_model');
     }
 
 
@@ -62,9 +62,9 @@ class Auth extends CI_Controller {
                         'is_login' => TRUE
                     );
                     $this->session->set_userdata($data);
-                    $url = base_url('admin/dashboard');
+                    $url = base_url('admin/home');
                 }
-				redirect(base_url() . 'admin/dashboard', 'refresh');
+				redirect(base_url() . 'admin/home', 'refresh');
             }else{
                redirect(base_url() . 'auth', 'refresh');
             }
